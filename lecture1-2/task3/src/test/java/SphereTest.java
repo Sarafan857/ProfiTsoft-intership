@@ -7,6 +7,6 @@ class SphereTest {
   void calcVolume() {
     Sphere sphere = new Sphere(4);
 
-    Assertions.assertEquals(268.08F, sphere.calcVolume());
+    Assertions.assertEquals(268.08, sphere.calcVolume());
   }
 }

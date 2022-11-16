@@ -12,17 +12,17 @@ class MainTest {
     Sphere sphere = new Sphere(3);
     Cylinder cylinder = new Cylinder(2, 3);
 
-    Map<Figure, Float> map = new HashMap<>();
+    Map<Figure, Double> map = new HashMap<>();
 
     map.put(cube, cube.calcVolume());
     map.put(sphere, sphere.calcVolume());
     map.put(cylinder, cylinder.calcVolume());
 
 
-    Map<Figure, Float> result = new HashMap<>();
-    result.put(cube, 8F);
-    result.put(sphere, 113.1F);
-    result.put(cylinder, 56.55F);
+    Map<Figure, Double> result = new HashMap<>();
+    result.put(cube, 8.0);
+    result.put(sphere, 113.1);
+    result.put(cylinder, 56.55);
 
     Assertions.assertEquals(result, map);
 

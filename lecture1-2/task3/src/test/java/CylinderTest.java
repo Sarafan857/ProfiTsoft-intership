@@ -5,8 +5,8 @@ class CylinderTest {
 
   @Test
   void calcVolume() {
-    Cylinder cylinder = new Cylinder(2, 1.5F);
+    Cylinder cylinder = new Cylinder(2, 1.5);
 
-    Assertions.assertEquals(14.14F, cylinder.calcVolume());
+    Assertions.assertEquals(14.14, cylinder.calcVolume());
   }
 }
