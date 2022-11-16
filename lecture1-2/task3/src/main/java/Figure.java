@@ -1,5 +1,5 @@
 public abstract class Figure {
 
-  public abstract float calcVolume();
+  public abstract double calcVolume();
 
 }

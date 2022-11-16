@@ -11,12 +11,12 @@ public class Main {
     Sphere sphere = new Sphere(2);
     Cylinder cylinder = new Cylinder(1, 3);
 
-    Map<Figure, Float> map = new HashMap<>();
+    Map<Figure, Double> map = new HashMap<>();
     map.put(cube, cube.calcVolume());
     map.put(sphere, sphere.calcVolume());
     map.put(cylinder, cylinder.calcVolume());
 
-    Map<Figure, Float> sortedByVolume;
+    Map<Figure, Double> sortedByVolume;
     sortedByVolume = sortByVolume(map);
 
     System.out.println("Sorted figures by volume:");
@@ -24,9 +24,9 @@ public class Main {
             .forEach(System.out::println);
   }
 
-  public static Map<Figure, Float> sortByVolume(Map<Figure, Float> map) {
+  public static Map<Figure, Double> sortByVolume(Map<Figure, Double> map) {
 
-    Map<Figure, Float> sortedByVolume;
+    Map<Figure, Double> sortedByVolume;
     sortedByVolume = map.entrySet()
             .stream()
             .sorted(Collections

@@ -1,22 +1,22 @@
 public class Sphere extends Figure {
 
-  private float radius;
+  private double radius;
 
-  public Sphere(float radius) {
+  public Sphere(double radius) {
     this.radius = radius;
   }
 
-  public float getRadius() {
+  public double getRadius() {
     return radius;
   }
 
-  public void setRadius(float radius) {
+  public void setRadius(double radius) {
     this.radius = radius;
   }
 
   @Override
-  public float calcVolume() {
-    return (float) Math.round((4/3.0) * Math.PI * Math.pow(getRadius(), 3) * 100) / 100;
+  public double calcVolume() {
+    return Math.round((4/3.0) * Math.PI * Math.pow(getRadius(), 3) * 100) / 100.0;
   }
 
   @Override

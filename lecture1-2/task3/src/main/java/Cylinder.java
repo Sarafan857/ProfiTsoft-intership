@@ -1,32 +1,32 @@
 public class Cylinder extends  Figure{
 
-  private float height;
-  private float radius;
+  private double height;
+  private double radius;
 
-  public Cylinder(float height, float radius) {
+  public Cylinder(double height, double radius) {
     this.height = height;
     this.radius = radius;
   }
 
-  public float getHeight() {
+  public double getHeight() {
     return height;
   }
 
-  public void setHeight(float height) {
+  public void setHeight(double height) {
     this.height = height;
   }
 
-  public float getRadius() {
+  public double getRadius() {
     return radius;
   }
 
-  public void setRadius(float radius) {
+  public void setRadius(double radius) {
     this.radius = radius;
   }
 
   @Override
-  public float calcVolume() {
-    return (float) Math.round(Math.PI * Math.pow(getRadius(), 2) * getHeight() * 100) / 100;
+  public double calcVolume() {
+    return Math.round(Math.PI * Math.pow(getRadius(), 2) * getHeight() * 100) / 100.0;
   }
 
   @Override

@@ -1,22 +1,22 @@
 public class Cube extends Figure {
 
-  private float edge;
+private double edge;
 
-  public Cube(float edge) {
+  public Cube(double edge) {
     this.edge = edge;
   }
 
-  public float getEdge() {
+  public double getEdge() {
     return edge;
   }
 
-  public void setEdge(float edge) {
+  public void setEdge(double edge) {
     this.edge = edge;
   }
 
   @Override
-  public float calcVolume() {
-    return (float) Math.round(Math.pow(getEdge(), 3) * 100) / 100;
+  public double calcVolume() {
+    return Math.round(Math.pow(getEdge(), 3) * 100) / 100.0;
   }
 
   @Override
