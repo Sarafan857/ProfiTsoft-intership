@@ -1,45 +1,60 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Task1 {
 
     public static void main (String[] args){
-        ArrayList<Integer> arrayIn;
-        ArrayList<Integer> arrayOut;
+        int[] arrayIn;
+        int[] arrayOut;
 
         arrayIn = getArray();
         System.out.println("Input array:");
-        System.out.println(arrayIn);
+        System.out.println(Arrays.toString(arrayIn));
 
-        arrayOut = new ArrayList<>(getPositiveArray(arrayIn));
+        arrayOut = getPositiveArray(arrayIn);
 
-        if(arrayOut.size() == 0) {
+        if(arrayOut.length == 0) {
             System.out.println("\nOnly negative elements in array");
         }
         else {
-            arrayOut.sort(Collections.reverseOrder());
+            arrayOut = Arrays.stream(arrayOut)
+                    .boxed()
+                    .sorted(Collections.reverseOrder())
+                    .mapToInt(Integer::intValue)
+                    .toArray();
             System.out.println("\nOutput array:");
-            System.out.println(arrayOut);
+            System.out.println(Arrays.toString(arrayOut));
         }
 
     }
 
-    public static ArrayList<Integer> getPositiveArray(ArrayList<Integer> array) {
-        array.removeIf(data -> data < 0);
+    public static int[] getPositiveArray(int[] array) {
+        List<Integer> list = Arrays.stream(array)
+                .boxed()
+                .collect(Collectors.toList());
 
-        return array;
+        list.removeIf(data -> data < 0);
+
+        int[] arrayOut = new int[list.size()];
+        for(int i = 0; i < list.size(); i++) {
+            arrayOut[i] = list.get(i);
+        }
+
+        return arrayOut;
     }
 
-    public static ArrayList<Integer> getArray() {
-        ArrayList<Integer> array = new ArrayList<>();
+    public static int[] getArray() {
+        int[] array = new int[10];
 
         Random rand = new Random();
         int min = -50;
         int max = 50;
 
-        for(int i = 0; i < 10; i++) {
-            array.add(rand.nextInt(max - min + 1) + min);
+        for(int i = 0; i < array.length; i++) {
+            array[i] = (rand.nextInt(max - min + 1) + min);
         }
 
         return array;
